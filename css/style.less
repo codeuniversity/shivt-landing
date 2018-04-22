@@ -1,0 +1,424 @@
+@font-face {
+  font-family: 'shivt-light'; /*a name to be used later*/
+  src: url('../fonts/colfax/Colfax-Light.otf'); /*URL to font*/
+}
+
+@font-face {
+  font-family: 'shivt-regular'; /*a name to be used later*/
+  src: url('../fonts/colfax/Colfax-Regular.otf'); /*URL to font*/
+}
+@font-face {
+  font-family: 'shivt-medium'; /*a name to be used later*/
+  src: url('../fonts/colfax/Colfax-Medium.otf'); /*URL to font*/
+}
+@font-face {
+  font-family: 'shivt-bold'; /*a name to be used later*/
+  src: url('../fonts/colfax/Colfax-Bold.otf'); /*URL to font*/
+}
+
+
+@green: #5df0aa; // shivt greeen
+@blue: #6d788f; // shivt blue
+@black: #000000;
+
+*{
+  -webkit-transition: all 0.2s ease;
+  -moz-transition:    all 0.2s ease;
+  -ms-transition:     all 0.2s ease;
+  -o-transition:      all 0.2s ease;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body{
+  margin: 0px;
+  padding-top: 150px;
+  font-family: 'shivt-regular';
+  .center{
+    float: left;
+    position: relative;
+    width: 1200px;
+    left: 50%;
+    margin-left: -600px;
+  }
+  .shadow{
+    -webkit-box-shadow: 0 5px 20px 0 rgba(128, 128, 128, 0.18);
+    -moz-box-shadow: 0 5px 20px 0 rgba(128, 128, 128, 0.18);
+    box-shadow: 0 5px 20px 0 rgba(128, 128, 128, 0.18);
+  }
+  .shadowH:hover{
+    -webkit-box-shadow: 0 5px 20px 0 rgba(128, 128, 128, 0.18);
+    -moz-box-shadow: 0 5px 20px 0 rgba(128, 128, 128, 0.18);
+    box-shadow: 0 5px 20px 0 rgba(128, 128, 128, 0.18);
+  }
+  h2{
+    margin-top: 64px;
+    font-size: 40px;
+    letter-spacing: 2.5px;
+    position: relative;
+    text-transform: uppercase;
+    &:after{
+      content: ' ';
+      position: absolute;
+      left: 1px;
+      width: 230px;
+      bottom: -19px;
+      height: 4px;
+      background-color: @black;
+    }
+  }
+  header{
+    position: fixed;
+    z-index: 10;
+    background-color: #ffffff;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 97px;
+    -webkit-transition: none;
+    -moz-transition:    none;
+    -ms-transition:     none;
+    -o-transition:      none;
+    transition: none;
+    font-family: 'shivt-medium';
+    &.start{
+      opacity: 0;
+      margin-top: -77px;
+    }
+    &.before, &.static{
+      position: fixed;
+      background-color: #ffffff;
+      height: 77px;
+      -webkit-transition: all 0.2s ease;
+      -moz-transition:    all 0.2s ease;
+      -ms-transition:     all 0.2s ease;
+      -o-transition:      all 0.2s ease;
+      .center{
+        .logo{
+          width: 258px;
+          height: 73px;
+          margin-top: -6px;
+        }
+        .menubar{
+          .sub{
+            margin-top: 32px;
+          }
+          .button{
+            margin-top: 20px;
+          }
+        }
+      }
+    }
+    &.fixed, &.staticfixed{
+      opacity: 1;
+      margin-top: 0px;
+      box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.28);
+    }
+    .center{
+      .mobilemenu{
+        display: none;
+        font-size: 32px;
+        color: @black;
+        float: left;
+        cursor: pointer;
+        padding: 23px;
+        .fa-times{
+          display: none;
+        }
+        &.active{
+          .fa-bars{
+            display: none;
+          }
+          .fa-times{
+            display: block;
+          }
+        }
+      }
+      .logo{
+        display: block;
+        width: 214px;
+        height: 54px;
+        background-size: 100%;
+        background-image: url(../images/logo.svg);
+        float: left;
+        margin-top: 20px;
+        background-repeat: no-repeat;
+      }
+      .menubar{
+        float: right;
+        .mainmenu{
+          float: left;
+        }
+        .sub{
+          display: block;
+          float: left;
+          color: @black;
+          text-decoration: none;
+          padding-left: 32px;
+          font-size: 14px;
+          padding-right: 10px;
+          margin-top: 41px;
+          letter-spacing: 2.5px;
+          font-weight: bold;
+          text-transform: uppercase;
+          position: relative;
+          cursor: pointer;
+          &:after{
+            width: 0px;
+            -webkit-transition: width 0.15s linear 0s;
+            transition: width 0.15s linear 0s;
+            content: " ";
+            position: absolute;
+            height: 3px;
+            background-color: #00ffa8;
+            left: 32px;
+            bottom: -13px;
+          }
+          &.login{
+            display: none;
+          }
+          &:hover{
+            &:after{
+              width: 40px;
+            }
+          }
+        }
+        .button{
+          float: left;
+          padding: 9px 25px 9px 25px;
+          margin-left: 10px;
+          margin-top: 29px;
+          cursor: pointer;
+          font-size: 14px;
+          letter-spacing: 2.5px;
+          text-decoration: none;
+          text-transform: uppercase;
+          &.login{
+            border: 2px solid @green;
+            color: @black;
+            margin-left: 35px;
+          }
+          &.action{
+            border: 2px solid @green;
+            background-color: @green;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+  section{
+    float: left;
+    width: 100%;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    &.slider{
+      .imageContainer{
+        float: left;
+        width: 50%;
+        position: relative;
+        overflow: hidden;
+        video{
+          width: 350px;
+          padding: 1px;
+          margin-top: -113px;
+        }
+        .image{
+          position: absolute;
+          top: -1px;
+          left: 0px;
+          float: left;
+          width: 350px;
+          height: 366px;
+          background-image: url(../images/imageBackground.png);
+          background-repeat: no-repeat;
+          background-size: 100%;
+        }
+      }
+      .textContainer{
+        float: left;
+        width: 50%;
+        .intro{
+          float: left;
+          width: 100%;
+          margin-top: 15px;
+          line-height: 1.4;
+          font-family: 'shivt-light';
+          letter-spacing: 2.5px;
+        }
+        .buttons{
+          float: left;
+          width: 100%;
+          .button{
+            letter-spacing: 2.5px;
+            float: left;
+            padding: 9px 25px 9px 25px;
+            margin-top: 29px;
+            cursor: pointer;
+            font-size: 14px;
+            text-decoration: none;
+            text-transform: uppercase;
+            border: 2px solid @green;
+            background-color: @green;
+            color: #fff;
+            margin-right: 15px;
+          }
+        }
+        a{
+          float: left;
+          margin-top: 30px;
+          margin-right: 15px;
+          img{
+            &.apple{
+              width: 150px;
+            }
+            &.google{
+              width: 167px;
+            }
+          }
+        }
+      }
+    }
+    &.image{
+      position: relative;
+      .imageContainer{
+        float: left;
+        width: 50%;
+        overflow: hidden;
+        .image{
+          float: right;
+          width: 537px;
+          height: 500px;
+          background-image: url(../images/conference.jpg);
+          background-repeat: no-repeat;
+          background-size: auto 100%;
+        }
+        .mac{
+          float: right;
+          width: 537px;
+          height: 500px;
+          background-image: url(../images/mac.png);
+          background-repeat: no-repeat;
+          background-size: 100%;
+        }
+      }
+      .phoneContainter{
+        float: left;
+        width: 50%;
+        overflow: hidden;
+        .phone{
+          width: 281px;
+          height: 500px;
+          background-image: url(../images/phone.png);
+          background-repeat: no-repeat;
+          background-size: auto 100%;
+          float: left;
+          &.small{
+            width: 241px;
+            margin-top: 41px;
+            height: 429px;
+          }
+        }
+      }
+      .textContainer{
+        float: left;
+        width: 50%;
+        .intro{
+          float: left;
+          width: 100%;
+          margin-top: 15px;
+          line-height: 1.4;
+          font-family: 'shivt-light';
+          letter-spacing: 2.5px;
+        }
+        .buttons{
+          float: left;
+          width: 100%;
+          .button{
+            letter-spacing: 2.5px;
+            float: left;
+            padding: 9px 25px 9px 25px;
+            margin-top: 29px;
+            cursor: pointer;
+            font-size: 14px;
+            text-decoration: none;
+            text-transform: uppercase;
+            border: 2px solid @green;
+            background-color: @green;
+            color: #fff;
+            margin-right: 15px;
+          }
+        }
+      }
+    }
+    &.devider{
+      background-color: @green;
+      height: 100px;
+      padding: 0px !important;
+      .subber{
+        margin-left: 180px;
+        border-left: 120px solid #ffffff;
+        padding-left: 50px;
+        color: #ffffff;
+        float: left;
+        height: 100px;
+        h3{
+          font-size: 30px;
+          margin-top: 19px;
+          margin-bottom: 5px;
+          letter-spacing: 2.5px;
+        }
+        .intro{
+          font-family: 'shivt-light';
+          letter-spacing: 2px;
+          float: left;
+          margin-top: 2px;
+        }
+      }
+    }
+  }
+  footer{
+    width: 100%;
+    float: left;
+    background-color: #f7f7f7;
+    padding-bottom: 20px;
+    &.static{
+      z-index: 4;
+      position: relative;
+    }
+    .center{
+      width: 1200px;
+      float: left;
+      position: relative;
+      left: 50%;
+      margin-left: -600px;
+      .logo{
+        width: 188px;
+        height: 66px;
+        background-size: 100%;
+        background-image: url(../images/logo.svg);
+        float: left;
+        background-position: left;
+        background-repeat: no-repeat;
+        margin-bottom: -21px;
+        margin-left: 24px;
+        opacity: 0.6;
+      }
+      .group{
+        float: right;
+        margin-top: 23px;
+        a{
+          text-decoration: none;
+          color: @blue;
+          font-weight: 500;
+          line-height: 1.7;
+          font-size: 12px;
+          float: left;
+          margin-right: 20px;
+          text-transform: uppercase;
+        }
+      }
+
+    }
+  }
+}

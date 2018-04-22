@@ -1,0 +1,414 @@
+@font-face {
+  font-family: 'shivt-light';
+  /*a name to be used later*/
+  src: url('../fonts/colfax/Colfax-Light.otf');
+  /*URL to font*/
+}
+@font-face {
+  font-family: 'shivt-regular';
+  /*a name to be used later*/
+  src: url('../fonts/colfax/Colfax-Regular.otf');
+  /*URL to font*/
+}
+@font-face {
+  font-family: 'shivt-medium';
+  /*a name to be used later*/
+  src: url('../fonts/colfax/Colfax-Medium.otf');
+  /*URL to font*/
+}
+@font-face {
+  font-family: 'shivt-bold';
+  /*a name to be used later*/
+  src: url('../fonts/colfax/Colfax-Bold.otf');
+  /*URL to font*/
+}
+* {
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+body {
+  margin: 0px;
+  padding-top: 150px;
+  font-family: 'shivt-regular';
+}
+body .center {
+  float: left;
+  position: relative;
+  width: 1200px;
+  left: 50%;
+  margin-left: -600px;
+}
+body .shadow {
+  -webkit-box-shadow: 0 5px 20px 0 rgba(128, 128, 128, 0.18);
+  -moz-box-shadow: 0 5px 20px 0 rgba(128, 128, 128, 0.18);
+  box-shadow: 0 5px 20px 0 rgba(128, 128, 128, 0.18);
+}
+body .shadowH:hover {
+  -webkit-box-shadow: 0 5px 20px 0 rgba(128, 128, 128, 0.18);
+  -moz-box-shadow: 0 5px 20px 0 rgba(128, 128, 128, 0.18);
+  box-shadow: 0 5px 20px 0 rgba(128, 128, 128, 0.18);
+}
+body h2 {
+  margin-top: 64px;
+  font-size: 40px;
+  letter-spacing: 2.5px;
+  position: relative;
+  text-transform: uppercase;
+}
+body h2:after {
+  content: ' ';
+  position: absolute;
+  left: 1px;
+  width: 230px;
+  bottom: -19px;
+  height: 4px;
+  background-color: #000000;
+}
+body header {
+  position: fixed;
+  z-index: 10;
+  background-color: #ffffff;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 97px;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -ms-transition: none;
+  -o-transition: none;
+  transition: none;
+  font-family: 'shivt-medium';
+}
+body header.start {
+  opacity: 0;
+  margin-top: -77px;
+}
+body header.before,
+body header.static {
+  position: fixed;
+  background-color: #ffffff;
+  height: 77px;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+}
+body header.before .center .logo,
+body header.static .center .logo {
+  width: 258px;
+  height: 73px;
+  margin-top: -6px;
+}
+body header.before .center .menubar .sub,
+body header.static .center .menubar .sub {
+  margin-top: 32px;
+}
+body header.before .center .menubar .button,
+body header.static .center .menubar .button {
+  margin-top: 20px;
+}
+body header.fixed,
+body header.staticfixed {
+  opacity: 1;
+  margin-top: 0px;
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.28);
+}
+body header .center .mobilemenu {
+  display: none;
+  font-size: 32px;
+  color: #000000;
+  float: left;
+  cursor: pointer;
+  padding: 23px;
+}
+body header .center .mobilemenu .fa-times {
+  display: none;
+}
+body header .center .mobilemenu.active .fa-bars {
+  display: none;
+}
+body header .center .mobilemenu.active .fa-times {
+  display: block;
+}
+body header .center .logo {
+  display: block;
+  width: 214px;
+  height: 54px;
+  background-size: 100%;
+  background-image: url(../images/logo.svg);
+  float: left;
+  margin-top: 20px;
+  background-repeat: no-repeat;
+}
+body header .center .menubar {
+  float: right;
+}
+body header .center .menubar .mainmenu {
+  float: left;
+}
+body header .center .menubar .sub {
+  display: block;
+  float: left;
+  color: #000000;
+  text-decoration: none;
+  padding-left: 32px;
+  font-size: 14px;
+  padding-right: 10px;
+  margin-top: 41px;
+  letter-spacing: 2.5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
+  cursor: pointer;
+}
+body header .center .menubar .sub:after {
+  width: 0px;
+  -webkit-transition: width 0.15s linear 0s;
+  transition: width 0.15s linear 0s;
+  content: " ";
+  position: absolute;
+  height: 3px;
+  background-color: #00ffa8;
+  left: 32px;
+  bottom: -13px;
+}
+body header .center .menubar .sub.login {
+  display: none;
+}
+body header .center .menubar .sub:hover:after {
+  width: 40px;
+}
+body header .center .menubar .button {
+  float: left;
+  padding: 9px 25px 9px 25px;
+  margin-left: 10px;
+  margin-top: 29px;
+  cursor: pointer;
+  font-size: 14px;
+  letter-spacing: 2.5px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+body header .center .menubar .button.login {
+  border: 2px solid #5df0aa;
+  color: #000000;
+  margin-left: 35px;
+}
+body header .center .menubar .button.action {
+  border: 2px solid #5df0aa;
+  background-color: #5df0aa;
+  color: #fff;
+}
+body section {
+  float: left;
+  width: 100%;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+body section.slider .imageContainer {
+  float: left;
+  width: 50%;
+  position: relative;
+  overflow: hidden;
+}
+body section.slider .imageContainer video {
+  width: 350px;
+  padding: 1px;
+  margin-top: -113px;
+}
+body section.slider .imageContainer .image {
+  position: absolute;
+  top: -1px;
+  left: 0px;
+  float: left;
+  width: 350px;
+  height: 366px;
+  background-image: url(../images/imageBackground.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+body section.slider .textContainer {
+  float: left;
+  width: 50%;
+}
+body section.slider .textContainer .intro {
+  float: left;
+  width: 100%;
+  margin-top: 15px;
+  line-height: 1.4;
+  font-family: 'shivt-light';
+  letter-spacing: 2.5px;
+}
+body section.slider .textContainer .buttons {
+  float: left;
+  width: 100%;
+}
+body section.slider .textContainer .buttons .button {
+  letter-spacing: 2.5px;
+  float: left;
+  padding: 9px 25px 9px 25px;
+  margin-top: 29px;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 2px solid #5df0aa;
+  background-color: #5df0aa;
+  color: #fff;
+  margin-right: 15px;
+}
+body section.slider .textContainer a {
+  float: left;
+  margin-top: 30px;
+  margin-right: 15px;
+}
+body section.slider .textContainer a img.apple {
+  width: 150px;
+}
+body section.slider .textContainer a img.google {
+  width: 167px;
+}
+body section.image {
+  position: relative;
+}
+body section.image .imageContainer {
+  float: left;
+  width: 50%;
+  overflow: hidden;
+}
+body section.image .imageContainer .image {
+  float: right;
+  width: 537px;
+  height: 500px;
+  background-image: url(../images/conference.jpg);
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+}
+body section.image .imageContainer .mac {
+  float: right;
+  width: 537px;
+  height: 500px;
+  background-image: url(../images/mac.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+body section.image .phoneContainter {
+  float: left;
+  width: 50%;
+  overflow: hidden;
+}
+body section.image .phoneContainter .phone {
+  width: 281px;
+  height: 500px;
+  background-image: url(../images/phone.png);
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  float: left;
+}
+body section.image .phoneContainter .phone.small {
+  width: 241px;
+  margin-top: 41px;
+  height: 429px;
+}
+body section.image .textContainer {
+  float: left;
+  width: 50%;
+}
+body section.image .textContainer .intro {
+  float: left;
+  width: 100%;
+  margin-top: 15px;
+  line-height: 1.4;
+  font-family: 'shivt-light';
+  letter-spacing: 2.5px;
+}
+body section.image .textContainer .buttons {
+  float: left;
+  width: 100%;
+}
+body section.image .textContainer .buttons .button {
+  letter-spacing: 2.5px;
+  float: left;
+  padding: 9px 25px 9px 25px;
+  margin-top: 29px;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 2px solid #5df0aa;
+  background-color: #5df0aa;
+  color: #fff;
+  margin-right: 15px;
+}
+body section.devider {
+  background-color: #5df0aa;
+  height: 100px;
+  padding: 0px !important;
+}
+body section.devider .subber {
+  margin-left: 180px;
+  border-left: 120px solid #ffffff;
+  padding-left: 50px;
+  color: #ffffff;
+  float: left;
+  height: 100px;
+}
+body section.devider .subber h3 {
+  font-size: 30px;
+  margin-top: 19px;
+  margin-bottom: 5px;
+  letter-spacing: 2.5px;
+}
+body section.devider .subber .intro {
+  font-family: 'shivt-light';
+  letter-spacing: 2px;
+  float: left;
+  margin-top: 2px;
+}
+body footer {
+  width: 100%;
+  float: left;
+  background-color: #f7f7f7;
+  padding-bottom: 20px;
+}
+body footer.static {
+  z-index: 4;
+  position: relative;
+}
+body footer .center {
+  width: 1200px;
+  float: left;
+  position: relative;
+  left: 50%;
+  margin-left: -600px;
+}
+body footer .center .logo {
+  width: 188px;
+  height: 66px;
+  background-size: 100%;
+  background-image: url(../images/logo.svg);
+  float: left;
+  background-position: left;
+  background-repeat: no-repeat;
+  margin-bottom: -21px;
+  margin-left: 24px;
+  opacity: 0.6;
+}
+body footer .center .group {
+  float: right;
+  margin-top: 23px;
+}
+body footer .center .group a {
+  text-decoration: none;
+  color: #6d788f;
+  font-weight: 500;
+  line-height: 1.7;
+  font-size: 12px;
+  float: left;
+  margin-right: 20px;
+  text-transform: uppercase;
+}
